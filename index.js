@@ -89,9 +89,7 @@ function computerTurn(playerGuess) {
     let randomValue = Math.floor(Math.random() * 3) + 1
     for (let i = 0; i < gamePlayIconList.length; i++) {
         if (parseInt(gamePlayIconList[i].getAttribute('value')) === randomValue) {
-            // console.log(randomValue, gamePlayIconList[i]);
             computerGuess = gamePlayIconList[i]
-            // gamePlayIconList[i].style.backgroundColor = 'transparent'
         }
     }
     calculateScore(playerGuess, computerGuess)
@@ -141,13 +139,11 @@ function calculateScore(playerGuess, computerGuess) {
 
     else if (playerGuessValue === '1') {
         if (computerGuessValue === '2') {
-            console.log("player is winner");
             winner = "player"
             winnerValue = 1
             playerWonCounter++
         }
         else if (computerGuessValue === '3') {
-            console.log("computer is winner");
             winner = "computer"
             winnerValue = 3
             computerWonCounter++
@@ -157,14 +153,12 @@ function calculateScore(playerGuess, computerGuess) {
 
     else if (playerGuessValue === '2') {
         if (computerGuessValue === '1') {
-            console.log("computer is winner");
             winner = "computer"
             winnerValue = 1
             computerWonCounter++
 
         }
         else if (computerGuessValue === '3') {
-            console.log("player is winner");
             winner = "player"
             winnerValue = 2
             playerWonCounter++
@@ -174,13 +168,11 @@ function calculateScore(playerGuess, computerGuess) {
 
     else if (playerGuessValue === '3') {
         if (computerGuessValue === '1') {
-            console.log("player is winner");
             winner = "player"
             winnerValue = 3
             playerWonCounter++
         }
         else if (computerGuessValue === '2') {
-            console.log("computer is winner");
             winner = "computer"
             winnerValue = 2
             computerWonCounter++
@@ -256,7 +248,6 @@ function updateWinnersIcons(winnerValue, winner) {
     console.log("winnerValue", winnerValue);
     for (let i = 0; i < gamePlayIconList.length; i++) {
         if (gamePlayIconList[i].getAttribute('value') == winnerValue) {
-            console.log("inside if", gamePlayIconList[i]);
             gamePlayIconList[i].classList.add('modify')
         }
     }
@@ -273,5 +264,5 @@ nextButton.addEventListener('click',()=>{
 })
 
 function checkVisibilityOfPlayIcon(){
-enablePlayIcon?console.log("nothing"):document.getElementsByClassName('symbol')[0].classList.add('disableClick');document.getElementsByClassName('symbol')[1].classList.add('disableClick');document.getElementsByClassName('symbol')[2].classList.add('disableClick')
+enablePlayIcon?console.log("true statement"):document.getElementsByClassName('symbol')[0].classList.add('disableClick');document.getElementsByClassName('symbol')[1].classList.add('disableClick');document.getElementsByClassName('symbol')[2].classList.add('disableClick')
 }
