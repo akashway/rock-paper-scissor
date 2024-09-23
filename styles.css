@@ -13,17 +13,17 @@ body {
 }
 
 #main {
-    width: 100%;
-    height: 70%;
+    width: 100vw;
+    height: 67vh;
 }
 
 header {
-    margin: 3rem auto 0;
-    width: 70%;
-    height: 25%;
-    border: 2px solid #FFFFFF;
+    margin: 4vh auto 0;
+    width: 70vw;
+    height: 23vh;
+    border: 0.3vh solid #FFFFFF;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 1rem 2rem
 }
 
 .header-div {
@@ -36,16 +36,15 @@ header {
 
 .game-name {
     font-family: "Roboto", sans-serif;
-    font-size: 40px;
+    font-size: 5vh;
     font-weight: 600;
-    line-height: 46.88px;
+    line-height: 6vh;
     letter-spacing: 0.1em;
     color: #FFFFFF;
-    width: 55%;
 }
 
 .game-score {
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -58,13 +57,13 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    width: 44%;
     color: #656565;
     background-color: #FFFFFF;
     border-radius: 10px;
     font-family: "Roboto", sans-serif;
-    font-size: 17px;
-    line-height: 19.92px;
+    font-size: 2.5vh;
+    line-height: 3vh;
     letter-spacing: 0.1em;
     text-align: left;
 }
@@ -81,16 +80,16 @@ header {
 
 .score {
     font-family: "Roboto", sans-serif;
-    font-size: 68px;
+    font-size: 8vh;
     font-weight: 700;
-    line-height: 79.69px;
+    line-height: 10vh;
     text-align: center;
     color: #252525;
 }
 
 .symbol {
-    min-width: 150px;
-    min-height: 150px;
+    width: 20vh;
+    height: 20vh;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -104,8 +103,8 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    width: 80%;
-    height: 80%;
+    width: 60vw;
+    height: 60vh;
     margin: 1rem auto;
     position: relative;
 }
@@ -113,26 +112,40 @@ header {
 .rock {
     grid-column: 1/2;
     grid-row: 1/2;
-    border: 16px solid #0074B6;
+    border: 2vh solid #0074B6;
     align-self: center;
     justify-self: center;
 }
 
+.rock>img{
+    width:15vh;
+}
+
+
 .scissors {
     grid-column: 2/3;
     grid-row: 1/2;
-    border: 16px solid #BD00FF;
+    border: 2vh solid #BD00FF;
     align-self: center;
     justify-self: center;
+}
+
+.scissors>img{
+    width:9vh;
 }
 
 .paper {
     grid-column: 1/3;
     grid-row: 2/3;
-    border: 16px solid #FFA943;
+    border: 2vh solid #FFA943;
     align-self: center;
     justify-self: center;
 }
+
+.paper>img{
+    width:15vh;
+}
+
 
 .lines {
     position: absolute;
@@ -145,26 +158,25 @@ header {
 
 line {
     stroke: #000000A3;
-    stroke-width: 15;
+    stroke-width: 1.5vh;
     z-index: 1;
-    /* border: 15px solid #000000A3 */
 }
 
 
 .game-rule {
     position: absolute;
-    bottom: 5rem;
-    right: 2rem;
+    bottom: 10vh;
+    right: 3vw;
     background-color: #004429;
-    border: 7px solid #FFFFFF;
+    border: 0.7vh solid #FFFFFF;
     border-radius: 7px;
     color: #FFFFFF;
-    max-width: 22%;
-    max-height: 45%;
+    width: 23vw;
+    height: 50vh;
     font-family: "Roboto", sans-serif;
-    font-size: 13px;
+    font-size: 1.8vh;
     font-weight: 400;
-    line-height: 15.23px;
+    line-height: 2.2vh;
     text-align: left;
     padding: 0 1rem;
     visibility: hidden;
@@ -173,12 +185,8 @@ line {
 
 .game-rule>h1 {
     font-family: Roboto;
-    font-size: 29px;
-    font-weight: 500;
-    line-height: 33.98px;
     text-align: center;
-    height: 20%;
-    padding-top: 1rem;
+    padding: 2vh 0 3vh;
 }
 
 .game-rule ul {
@@ -192,8 +200,8 @@ line {
 
 .game-rule ul li {
     position: relative;
-    padding-left: 30px;
-    margin-bottom: 20px;
+    padding-left: 2vw;
+    margin-bottom: 2vh
 }
 
 .game-rule ul li::before {
@@ -225,8 +233,7 @@ line {
     justify-content: center;
     align-items: center;
     z-index: 10;
-    /* position: relative;
-    top:17%; */
+    margin-top: 17vh;
 }
 
 .update-container>div:last-child {
@@ -239,9 +246,9 @@ line {
 .update-container>div:first-child>p,
 .update-container>div:last-child>p {
     font-family: "Roboto", sans-serif;
-    font-size: 17px;
+    font-size: 2vh;
     font-weight: 800;
-    line-height: 19.92px;
+    line-height: 2vh;
     letter-spacing: 0.1em;
     text-align: left;
     color: #FFFFFF;
@@ -255,9 +262,9 @@ line {
 
 .result-item2>div>p:first-child {
     font-family: "Roboto", sans-serif;
-    font-size: 39px;
+    font-size: 4vh;
     font-weight: 800;
-    line-height: 45.7px;
+    line-height: 5vh;
     letter-spacing: 0.1em;
     text-align: center;
     color: #FFFFFF;
@@ -265,9 +272,9 @@ line {
 
 .result-item2>div>p:nth-child(2) {
     font-family: "Roboto", sans-serif;
-    font-size: 25px;
+    font-size: 2.5vh;
     font-weight: 800;
-    line-height: 29.3px;
+    line-height: 3vh;
     letter-spacing: 0.1em;
     text-align: center;
     color: #FFFFFF;
@@ -337,16 +344,17 @@ line {
     border-radius: 10px;
     border: 0;
     border-color: #FFFFFF;
-    padding: 1rem 2.5rem;
+    padding: 2vh 3vw;
     font-family: "Roboto", sans-serif;
-    font-size: 15px;
+    font-size: 2vh;
     font-weight: 600;
-    line-height: 17.58px;
+    line-height: 2vh;
     letter-spacing: 0.1em;
     text-align: left;
     color: #6B6B6B;
-    margin-top: 0.5rem;
+    margin-top: 2vh;
 }
+
 
 footer {
     position: relative;
@@ -356,22 +364,22 @@ footer {
     display: flex;
     flex-direction: row-reverse;
     position: absolute;
-    bottom: 3rem;
-    right: 1rem;
+    bottom: 1vh;
+    right: 1vw;
 }
 
 .footer-button button,.celeb-footer-button button {
     font-family: "Roboto", sans-serif;
-    font-size: 21px;
+    font-size: 2vh;
     font-weight: 600;
-    line-height: 24.61px;
+    line-height: 3vh;
     letter-spacing: 0.1em;
     text-align: left;
     color: #FFFFFF;
     border: 2px solid #FFFFFF;
     background-color: transparent;
-    padding: 0.5rem 2rem;
-    margin: 0px 1rem;
+    padding: 1vh 3vw;
+    margin: 0px 1vw;
     border-radius: 10px;
 }
 
@@ -387,46 +395,50 @@ footer {
 
 .cross-rule-button{
     position: absolute;
-    top: -45px;
-    right: -35px;
-    width: 70px;
-    height: 70px;
+    top: -7vh;
+    right: -3vh;
+    width: 9vh;
+    height: 9vh;
     background-color: #FF0000;
-    border: 5px solid #FFFFFF;
+    border: 0.8vh solid #FFFFFF;
     border-radius: 50%;
+}
+
+.cross-rule-button>img{
+    width: 2vw;
 }
 
 /* celebration page css- start */
 #celeb-main {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 #celebration-div {
-    grid-column: 1/2;
-    grid-row: 1/2;
+    grid-column: 1/-1;
+    grid-row: 1/3;
     /* width: 60%;
     height: 30%; */
     position: relative;
-    align-self: flex-end;
+    align-self: center;
     justify-self: center;
     animation: grow-shrink 2s infinite;
 }
 
 #celebration-text {
-    grid-column: 1/2;
-    grid-row: 2/3;
+    grid-column: 1/-1;
+    grid-row: 3/4;
     align-self: flex-end;
     justify-self: center;
 }
 
 #celeb-play-again {
     grid-column: 1/2;
-    grid-row: 3/4;
+    grid-row: 4/5;
     align-self: center;
     justify-self: center;
 }
@@ -443,9 +455,7 @@ footer {
 
 #celebration-text>p {
     font-family: "Roboto", sans-serif;
-    font-size: 91px;
     font-weight: 600;
-    line-height: 106.64px;
     letter-spacing: 0.1em;
     text-align: center;
     color: #FFFFFF;
@@ -453,13 +463,13 @@ footer {
 }
 
 #celebration-text>p:first-child {
-    font-size: 91px;
-    line-height: 106.64px;
+    font-size: 8vh;
+    line-height: 9vh;
 }
 
 #celebration-text>p:last-child {
-    font-size: 41px;
-    line-height: 48.05px;
+    font-size: 4vh;
+    line-height: 5vh;
 }
 
 @keyframes blink-animation {
