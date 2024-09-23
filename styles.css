@@ -97,8 +97,12 @@ header {
     background: #FFFFFF;
     box-shadow: 3px 0px 21px 1px #00000033 inset;
     z-index: 2;
+    cursor: pointer;
 }
 
+.disableClick{
+    pointer-events:none
+}
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -353,6 +357,7 @@ line {
     text-align: left;
     color: #6B6B6B;
     margin-top: 2vh;
+    cursor: pointer;
 }
 
 
@@ -381,6 +386,7 @@ footer {
     padding: 1vh 3vw;
     margin: 0px 1vw;
     border-radius: 10px;
+    cursor:pointer
 }
 
 #next-button {
@@ -402,6 +408,7 @@ footer {
     background-color: #FF0000;
     border: 0.8vh solid #FFFFFF;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .cross-rule-button>img{

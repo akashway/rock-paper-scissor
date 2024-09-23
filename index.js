@@ -2,7 +2,7 @@ const gamePlayIconList = document.querySelectorAll('#main>div>div')
 let rulesButton = document.getElementById('rules-button')
 let cancelRulesInfo=document.querySelector(".cross-rule-button")
 const body = document.getElementsByTagName('body')[0]
-
+const nextButton= document.getElementById('next-button')
 const container = document.querySelector('.container')
 const rock = document.getElementsByClassName('rock')[0]
 const scissors = document.getElementsByClassName('scissors')[0]
@@ -15,9 +15,8 @@ const line3 = document.getElementById('line3')
 let containerChild1Div
 let containerChild2Div
 let containerChild3Div
-
 let showNextButton=false
-
+let enablePlayIcon=true
 
 
 let computerWonCounter = localStorage.getItem('computerWonCount') || 0
@@ -56,7 +55,6 @@ const tieText = `
     ${replay}
 `
 
-
 const computerScore = document.getElementsByClassName('computer-score')[0]
 let pElementForcomputerScore = document.createElement('p')
 pElementForcomputerScore.innerHTML = `<p class="score">${computerWonCounter}</p>`
@@ -75,10 +73,13 @@ console.log(gamePlayIconList);
 for (let i = 0; i < gamePlayIconList.length; i++) {
     let playerGuess = 0
     gamePlayIconList[i].addEventListener('click', () => {
+        enablePlayIcon=false
+        checkVisibilityOfPlayIcon()
         showNextButton=false
         console.log(gamePlayIconList[i].getAttribute('value'));
         playerGuess = gamePlayIconList[i];
         computerTurn(playerGuess)
+        console.log(enablePlayIcon);
     })
 }
 
@@ -217,7 +218,7 @@ cancelRulesInfo.addEventListener('click',()=>{
 
 
 document.addEventListener('DOMContentLoaded', () => {
-
+    enablePlayIcon=true
     const updateLine = (line, startDiv, endDiv) => {
         const radius = startDiv.offsetWidth / 2;
         const startX = startDiv.offsetLeft + radius;
@@ -265,4 +266,12 @@ function updateWinnersIcons(winnerValue, winner) {
         document.getElementById("next-button").style.visibility="visible"
         document.querySelector('.footer-button').classList.add('update-footer')
     }
+}
+
+nextButton.addEventListener('click',()=>{
+    location.href='celebration.html'
+})
+
+function checkVisibilityOfPlayIcon(){
+enablePlayIcon?console.log("nothing"):document.getElementsByClassName('symbol')[0].classList.add('disableClick');document.getElementsByClassName('symbol')[1].classList.add('disableClick');document.getElementsByClassName('symbol')[2].classList.add('disableClick')
 }
