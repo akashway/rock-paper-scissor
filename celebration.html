@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebration</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="game-rule">
+        <button onclick="document.querySelector('.game-rule').style.visibility='hidden';" class="cross-rule-button">
+            <img src="./Images/X.png" alt="">
+        </button>
+        <h1>Game Rules</h1>
+        <ul>
+            <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+            <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock,
+                paper,scissors.”</li>
+            <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+            <li>If both players lay down the same hand, each player lays down another hand</li>
+        </ul>
+    </div>
+    <main id="celeb-main">
+        <div id="celebration-div">
+            <img src="./Images/Group 5.png" alt="" class="blink-image">
+            <img src="./Images/Vector.png" alt="">
+        </div>
+        <div id="celebration-text">
+            <p>HURRAY!!</p>
+            <p>YOU WON THE GAME</p>
+        </div>
+        <div id="celeb-play-again">
+            <button onclick="window.location.href='index.html'"  id="playagain">
+                PLAY AGAIN
+            </button>
+        </div>
+    </main>
+    <footer>
+        <div class="celeb-footer-button">
+            <button onclick="document.querySelector('.game-rule').style.visibility='visible';" id="celeb-rules-button">RULES</button>
+        </div>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+
+</html>

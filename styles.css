@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #8CC461;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main {
+    width: 100%;
+    height: 70%;
+}
+
+header {
+    margin: 3rem auto 0;
+    width: 70%;
+    height: 25%;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.header-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.game-name {
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 46.88px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    width: 55%;
+}
+
+.game-score {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+.computer-score,
+.player-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    color: #656565;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+.computer-score>p:first-child,
+.player-score>p:first-child {
+    font-weight: 600;
+}
+
+.computer-score>p:nth-child(2),
+.player-score>p:nth-child(2) {
+    font-weight: 700;
+}
+
+.score {
+    font-family: "Roboto", sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 79.69px;
+    text-align: center;
+    color: #252525;
+}
+
+.symbol {
+    min-width: 150px;
+    min-height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 3px 0px 21px 1px #00000033 inset;
+    z-index: 2;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 80%;
+    height: 80%;
+    margin: 1rem auto;
+    position: relative;
+}
+
+.rock {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    border: 16px solid #0074B6;
+    align-self: center;
+    justify-self: center;
+}
+
+.scissors {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    border: 16px solid #BD00FF;
+    align-self: center;
+    justify-self: center;
+}
+
+.paper {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    border: 16px solid #FFA943;
+    align-self: center;
+    justify-self: center;
+}
+
+.lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+line {
+    stroke: #000000A3;
+    stroke-width: 15;
+    z-index: 1;
+    /* border: 15px solid #000000A3 */
+}
+
+
+.game-rule {
+    position: absolute;
+    bottom: 5rem;
+    right: 2rem;
+    background-color: #004429;
+    border: 7px solid #FFFFFF;
+    border-radius: 7px;
+    color: #FFFFFF;
+    max-width: 22%;
+    max-height: 45%;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15.23px;
+    text-align: left;
+    padding: 0 1rem;
+    visibility: hidden;
+    z-index: 100;
+}
+
+.game-rule>h1 {
+    font-family: Roboto;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: center;
+    height: 20%;
+    padding-top: 1rem;
+}
+
+.game-rule ul {
+    list-style: none;
+    padding-left: 0;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.game-rule ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.game-rule ul li::before {
+    content: "\25A0";
+    position: absolute;
+    left: 0;
+    color: #FFD600;
+    font-size: 2em;
+}
+
+
+.update-container {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 20;
+}
+
+.update-container>div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-container>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* position: relative;
+    top:17%; */
+}
+
+.update-container>div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-container>div:first-child>p,
+.update-container>div:last-child>p {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #FFFFFF;
+    margin-bottom: 4rem;
+}
+
+.result-item2>div {
+    text-align: center;
+}
+
+
+.result-item2>div>p:first-child {
+    font-family: "Roboto", sans-serif;
+    font-size: 39px;
+    font-weight: 800;
+    line-height: 45.7px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.result-item2>div>p:nth-child(2) {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 29.3px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+.modify {
+    /* transform: translateX(-50%); */
+    transition: all 0s ease-in-out;
+    animation: ripple 0s 0s forwards;
+    -webkit-animation: ripple 0s 0s forwards;
+}
+
+@keyframes ripple {
+
+    20% {
+        box-shadow: 0px 0px 0px 6px #3B672050,
+            0px 0px 0px 8px #3B672050;
+    }
+
+    50% {
+        box-shadow: 0px 0px 0px 6px #3B672050,
+            0px 0px 0px 8px #3B672050,
+            0px 0px 0px 14px #1DA82B50,
+            0px 0px 2px 16px #1DA82B50;
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 28px #3B672050,
+            0px 0px 0px 8px #3B672050,
+            0px 0px 0px 58px #1DA82B50,
+            0px 0px 2px 16px #1DA82B50,
+            0px 0px 0px 86px #2E9A2550,
+            0px 0px 5px 24px #2E9A2550
+    }
+
+}
+
+
+.result-item2>div:nth-child(2) {
+    font-family: "Roboto", sans-serif;
+    font-size: 39px;
+    font-weight: 800;
+    line-height: 45.7px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #FFFFFF;
+
+}
+
+.result-item2>div:nth-child(2)>p:nth-child(2) {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    line-height: 29.3px;
+
+}
+
+#replay,
+#playagain {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: 0;
+    border-color: #FFFFFF;
+    padding: 1rem 2.5rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 17.58px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #6B6B6B;
+    margin-top: 0.5rem;
+}
+
+footer {
+    position: relative;
+}
+
+.footer-button,.celeb-footer-button{
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    bottom: 3rem;
+    right: 1rem;
+}
+
+.footer-button button,.celeb-footer-button button {
+    font-family: "Roboto", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 24.61px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    background-color: transparent;
+    padding: 0.5rem 2rem;
+    margin: 0px 1rem;
+    border-radius: 10px;
+}
+
+#next-button {
+    visibility: hidden;
+}
+
+
+.update-footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.cross-rule-button{
+    position: absolute;
+    top: -45px;
+    right: -35px;
+    width: 70px;
+    height: 70px;
+    background-color: #FF0000;
+    border: 5px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+/* celebration page css- start */
+#celeb-main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#celebration-div {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    /* width: 60%;
+    height: 30%; */
+    position: relative;
+    align-self: flex-end;
+    justify-self: center;
+    animation: grow-shrink 2s infinite;
+}
+
+#celebration-text {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: flex-end;
+    justify-self: center;
+}
+
+#celeb-play-again {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    align-self: center;
+    justify-self: center;
+}
+
+#celebration-div>img:last-child {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+.blink-image {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+#celebration-text>p {
+    font-family: "Roboto", sans-serif;
+    font-size: 91px;
+    font-weight: 600;
+    line-height: 106.64px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#celebration-text>p:first-child {
+    font-size: 91px;
+    line-height: 106.64px;
+}
+
+#celebration-text>p:last-child {
+    font-size: 41px;
+    line-height: 48.05px;
+}
+
+@keyframes blink-animation {
+    20% {
+        opacity: 0.2;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    60% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes grow-shrink {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* celebration page css- end */

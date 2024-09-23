@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="game-rule">
+        <button class="cross-rule-button">
+            <img src="./Images/X.png" alt="">
+        </button>
+        <h1>Game Rules</h1>
+        <ul>
+            <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+            <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock,
+                paper,scissors.”</li>
+            <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+            <li>If both players lay down the same hand, each player lays down another hand</li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="header-div">
+            <div class="game-name">
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+            </div>
+            <div class="game-score">
+                <div class="computer-score">
+                    <p>COMPUTER</p>
+                    <p>SCORE</p>
+                </div>
+                <div class="player-score">
+                    <p>YOUR</p>
+                    <p>SCORE</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main id="main">
+        <div class="container">
+            <div class="symbol rock" value="1">
+                <img src="./Images/icons8-fist-67 1.png" alt="rock img">
+            </div>
+
+            <div class="symbol scissors" value="2">
+                <img src="./Images/17911 1.png" alt="scissors img">
+            </div>
+            <div class="symbol paper" value="3">
+                <img src="./Images/icons8-hand-64 1.png" alt="paper img">
+            </div>
+
+            <svg class="lines">
+                <line id="line1" />
+                <line id="line2" />
+                <line id="line3" />
+            </svg>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-button">
+            <button id="rules-button">RULES</button>
+            <button onclick="location.href='celebration.html'" id="next-button">NEXT</button>
+        </div>
+    </footer>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
+
+
+<!-- https://docs.google.com/document/d/1gbVEF1Bjx-r56SgkwT7evE0GTslW5N92shLHZGb20WY/edit#heading=h.hl40xqcjlpn4 -->
